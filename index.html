@@ -1,36 +1,32 @@
-<html id="note" contenteditable="true">
-
-<head>
-  <title>Noter</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-</head>
-  
-  <style>
-html {
-  margin-top: 75px;
-  margin-left: 100px;
-  margin-right: 100px;
-  font-family: "Nunito", sans-serif;
-}
-</style>
-<script>
-document.getElementById("note").addEventListener(
-  "input",
-  function () {
-    var note = document.getElementById("note").innerHTML;
-
-    localStorage.setItem("notetext", note);
-  },
-  false
-);
-
-function load() {
-  document.getElementById("note").innerHTML = localStorage.getItem("notetext");
-}
-</script>
-
-<body onload="load()">
-  </body>
-
+<html>
+   <head>
+      <title>Noter</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+   </head>
+   <style>
+      html {
+      margin-top: 75px;
+      margin-left: 100px;
+      margin-right: 100px;
+      font-family: "Nunito", sans-serif;
+      }
+   </style>
+   <script>
+      document.getElementById("note").addEventListener(
+        "input",
+        function () {
+          var note = document.getElementById("note").innerHTML;
+      
+          localStorage.setItem("notetext", note);
+        },
+        false
+      );
+      
+      function load() {
+        document.getElementById("note").innerHTML = localStorage.getItem("notetext");
+      }
+   </script>
+   <body onload="load()" id="note" contenteditable="true">
+   </body>
 </html>
